@@ -1,0 +1,209 @@
+
+
+================================================================
+== Vivado HLS Report for 'cordiccart2pol'
+================================================================
+* Date:           Tue Feb  4 16:05:34 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cordiccart2pol
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.789|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  252|  252|  252|  252|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  240|  240|        15|          -|          -|    16|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    318|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        0|     24|    1638|   3271|    -|
+|Memory           |        0|      -|      64|     16|    -|
+|Multiplexer      |        -|      -|       -|    300|    -|
+|Register         |        -|      -|     519|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|     24|    2221|   3905|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|     10|       2|      7|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------+--------------------------------+---------+-------+-----+-----+-----+
+    |             Instance             |             Module             | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +----------------------------------+--------------------------------+---------+-------+-----+-----+-----+
+    |cordiccart2pol_cordic_io_s_axi_U  |cordiccart2pol_cordic_io_s_axi  |        0|      0|  188|  296|    0|
+    |cordiccart2pol_dmjbC_U9           |cordiccart2pol_dmjbC            |        0|     11|  317|  578|    0|
+    |cordiccart2pol_fadEe_U1           |cordiccart2pol_fadEe            |        0|      2|  205|  390|    0|
+    |cordiccart2pol_faeOg_U2           |cordiccart2pol_faeOg            |        0|      2|  205|  390|    0|
+    |cordiccart2pol_fcibs_U8           |cordiccart2pol_fcibs            |        0|      0|   66|  239|    0|
+    |cordiccart2pol_fmfYi_U3           |cordiccart2pol_fmfYi            |        0|      3|  143|  321|    0|
+    |cordiccart2pol_fmfYi_U4           |cordiccart2pol_fmfYi            |        0|      3|  143|  321|    0|
+    |cordiccart2pol_fmfYi_U5           |cordiccart2pol_fmfYi            |        0|      3|  143|  321|    0|
+    |cordiccart2pol_fpg8j_U6           |cordiccart2pol_fpg8j            |        0|      0|  128|  277|    0|
+    |cordiccart2pol_fphbi_U7           |cordiccart2pol_fphbi            |        0|      0|  100|  138|    0|
+    +----------------------------------+--------------------------------+---------+-------+-----+-----+-----+
+    |Total                             |                                |        0|     24| 1638| 3271|    0|
+    +----------------------------------+--------------------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +-----------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |   Memory  |        Module        | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-----------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Kvalues_U  |cordiccart2pol_Kvbkb  |        0|  32|   8|    0|    16|   32|     1|          512|
+    |angles_U   |cordiccart2pol_ancud  |        0|  32|   8|    0|    16|   32|     1|          512|
+    +-----------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total      |                      |        0|  64|  16|    0|    32|   64|     2|         1024|
+    +-----------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |i_fu_310_p2            |     +    |      0|  0|  15|           5|           1|
+    |and_ln13_fu_254_p2     |    and   |      0|  0|   2|           1|           1|
+    |and_ln27_fu_358_p2     |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln13_1_fu_242_p2  |   icmp   |      0|  0|  18|          23|           1|
+    |icmp_ln13_fu_236_p2    |   icmp   |      0|  0|  11|           8|           2|
+    |icmp_ln25_fu_304_p2    |   icmp   |      0|  0|  11|           5|           6|
+    |icmp_ln27_1_fu_346_p2  |   icmp   |      0|  0|  18|          23|           1|
+    |icmp_ln27_fu_340_p2    |   icmp   |      0|  0|  11|           8|           2|
+    |or_ln13_fu_248_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln27_fu_352_p2      |    or    |      0|  0|   2|           1|           1|
+    |c_x_2_fu_282_p3        |  select  |      0|  0|  32|           1|          32|
+    |c_y_3_fu_289_p3        |  select  |      0|  0|  32|           1|          32|
+    |grp_fu_181_p0          |  select  |      0|  0|  32|           1|          30|
+    |select_ln13_fu_296_p3  |  select  |      0|  0|  32|           1|          30|
+    |select_ln33_fu_364_p3  |  select  |      0|  0|  32|           1|          32|
+    |xor_ln16_fu_262_p2     |    xor   |      0|  0|  33|          32|          33|
+    |xor_ln20_fu_272_p2     |    xor   |      0|  0|  33|          32|          33|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 318|         145|         239|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+-----+-----------+-----+-----------+
+    |        Name       | LUT | Input Size| Bits| Total Bits|
+    +-------------------+-----+-----------+-----+-----------+
+    |angle_1_reg_140    |    9|          2|   32|         64|
+    |ap_NS_fsm          |  129|         28|    1|         28|
+    |c_y_1_reg_130      |    9|          2|   32|         64|
+    |grp_fu_162_opcode  |   15|          3|    2|          6|
+    |grp_fu_162_p0      |   15|          3|   32|         96|
+    |grp_fu_162_p1      |   15|          3|   32|         96|
+    |grp_fu_173_p0      |   15|          3|   32|         96|
+    |grp_fu_173_p1      |   15|          3|   32|         96|
+    |grp_fu_177_p0      |   15|          3|   32|         96|
+    |grp_fu_177_p1      |   15|          3|   32|         96|
+    |grp_fu_195_opcode  |   15|          3|    5|         15|
+    |grp_fu_195_p0      |   15|          3|   32|         96|
+    |i_0_reg_151        |    9|          2|    5|         10|
+    |tempX_reg_120      |    9|          2|   32|         64|
+    +-------------------+-----+-----------+-----+-----------+
+    |Total              |  300|         63|  333|        923|
+    +-------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------+----+----+-----+-----------+
+    |         Name         | FF | LUT| Bits| Const Bits|
+    +----------------------+----+----+-----+-----------+
+    |Kvalues_load_reg_438  |  32|   0|   32|          0|
+    |and_ln27_reg_432      |   1|   0|    1|          0|
+    |angle_1_reg_140       |  32|   0|   32|          0|
+    |angle_reg_465         |  32|   0|   32|          0|
+    |angles_load_reg_444   |  32|   0|   32|          0|
+    |ap_CS_fsm             |  27|   0|   27|          0|
+    |c_y_1_reg_130         |  32|   0|   32|          0|
+    |i_0_reg_151           |   5|   0|    5|          0|
+    |i_reg_417             |   5|   0|    5|          0|
+    |reg_207               |  32|   0|   32|          0|
+    |reg_213               |  32|   0|   32|          0|
+    |tempX_reg_120         |  32|   0|   32|          0|
+    |tmp_2_reg_394         |   1|   0|    1|          0|
+    |tmp_5_reg_480         |  64|   0|   64|          0|
+    |tmp_6_reg_485         |  64|   0|   64|          0|
+    |tmp_9_reg_460         |  32|   0|   32|          0|
+    |x_read_reg_388        |  32|   0|   32|          0|
+    |y_read_reg_381        |  32|   0|   32|          0|
+    +----------------------+----+----+-----+-----------+
+    |Total                 | 519|   0|  519|          0|
+    +----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+----------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-------------------------+-----+-----+------------+----------------+--------------+
+|s_axi_cordic_io_AWVALID  |  in |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_AWREADY  | out |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_AWADDR   |  in |    6|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_WVALID   |  in |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_WREADY   | out |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_WDATA    |  in |   32|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_WSTRB    |  in |    4|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_ARVALID  |  in |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_ARREADY  | out |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_ARADDR   |  in |    6|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_RVALID   | out |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_RREADY   |  in |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_RDATA    | out |   32|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_RRESP    | out |    2|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_BVALID   | out |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_BREADY   |  in |    1|    s_axi   |    cordic_io   |    pointer   |
+|s_axi_cordic_io_BRESP    | out |    2|    s_axi   |    cordic_io   |    pointer   |
+|ap_clk                   |  in |    1| ap_ctrl_hs | cordiccart2pol | return value |
+|ap_rst_n                 |  in |    1| ap_ctrl_hs | cordiccart2pol | return value |
+|interrupt                | out |    1| ap_ctrl_hs | cordiccart2pol | return value |
++-------------------------+-----+-----+------------+----------------+--------------+
+

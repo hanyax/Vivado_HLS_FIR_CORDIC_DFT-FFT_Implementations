@@ -1,0 +1,124 @@
+
+
+================================================================
+== Vivado HLS Report for 'mul_test'
+================================================================
+* Date:           Mon Jan 27 21:16:08 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        pynq_mul
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     2.000|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    0|    0|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       -|      -|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        0|      -|     112|    168|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|      -|    -|
+|Register         |        -|      -|       -|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|     112|    168|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+-----------------------+---------+-------+-----+-----+-----+
+    |         Instance        |         Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +-------------------------+-----------------------+---------+-------+-----+-----+-----+
+    |mul_test_mul_io_s_axi_U  |mul_test_mul_io_s_axi  |        0|      0|  112|  168|    0|
+    +-------------------------+-----------------------+---------+-------+-----+-----+-----+
+    |Total                    |                       |        0|      0|  112|  168|    0|
+    +-------------------------+-----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_mul_io_AWVALID  |  in |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_AWREADY  | out |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_AWADDR   |  in |    5|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_WVALID   |  in |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_WREADY   | out |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_WDATA    |  in |   32|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_WSTRB    |  in |    4|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_ARVALID  |  in |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_ARREADY  | out |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_ARADDR   |  in |    5|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_RVALID   | out |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_RREADY   |  in |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_RDATA    | out |   32|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_RRESP    | out |    2|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_BVALID   | out |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_BREADY   |  in |    1|    s_axi   |    mul_io    |    scalar    |
+|s_axi_mul_io_BRESP    | out |    2|    s_axi   |    mul_io    |    scalar    |
+|ap_clk                |  in |    1| ap_ctrl_hs |   mul_test   | return value |
+|ap_rst_n              |  in |    1| ap_ctrl_hs |   mul_test   | return value |
+|interrupt             | out |    1| ap_ctrl_hs |   mul_test   | return value |
++----------------------+-----+-----+------------+--------------+--------------+
+
