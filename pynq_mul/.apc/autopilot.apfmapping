@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="mul_test.cpp" path="C:\Users\hax032\Desktop\CSE237C_hax032\pynq_mul\mul_test.cpp"/>
-  </source>
-  <testbench>
-    <originFiles name="mul_tb.cpp" path="C:\Users\hax032\Desktop\CSE237C_hax032\pynq_mul\mul_tb.cpp"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>
