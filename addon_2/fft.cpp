@@ -6,7 +6,7 @@
 #include "ap_int.h"
 
 int reverse_bits(unsigned int input, int size) {
-	ap_int<12> i, rev = 0;
+	int i, rev = 0;
 	for (i = 0; i < log2(size); i++) {
 		rev = (rev << 1) | (input & 1);
 		input = input >> 1;
@@ -16,7 +16,7 @@ int reverse_bits(unsigned int input, int size) {
 
 void bit_reverse(DTYPE* X_R, DTYPE* X_I, int size) {
 	//Write your code here.
-	ap_int<12> i, reversed;
+	int i, reversed;
 	DTYPE temp_R, temp_I;
 	for (i = 0; i < size; i++) {
 		reversed = reverse_bits(i, size);
@@ -44,18 +44,18 @@ void fft(DTYPE* IN_R, DTYPE* IN_I, DTYPE* OUT_R, DTYPE* OUT_I, int size) {
 #pragma HLS INTERFACE s_axilite port=OUT_I
 #pragma HLS INTERFACE s_axilite port=IN_R
 #pragma HLS INTERFACE s_axilite port=IN_I
-	DTYPE X_R[1024], X_I[1024];
+	DTYPE X_R[16384], X_I[16384];
 	memcpy(X_R, (const DTYPE*) IN_R, size * sizeof(DTYPE));
 	memcpy(X_I, (const DTYPE*) IN_I, size * sizeof(DTYPE));
 
 	DTYPE temp_R;		/*temporary storage complex variable*/
 	DTYPE temp_I;		/*temporary storage complex variable*/
-	ap_int<12> i,j,k;			/* loop indexes */
-	ap_int<12> i_lower;		/* Index of lower point in butterfly */
-	ap_int<12> step;
-	ap_int<12> stage;
-	ap_int<12> DFTpts;
-	ap_int<12> numBF;			/*Butterfly Width*/
+	int i,j,k;			/* loop indexes */
+	int i_lower;		/* Index of lower point in butterfly */
+	int step;
+	int stage;
+	int DFTpts;
+	int numBF;			/*Butterfly Width*/
 
 	/*=====================BEGIN BIT REBERSAL===========================*/
 	// write your code here
